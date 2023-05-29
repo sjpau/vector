@@ -7,14 +7,14 @@ type Vector2D struct {
 	Y float64
 }
 
-func (self *Vector2D) Dot(v *Vector2D) float64 {
-	return self.X*v.X + self.Y*v.Y
+func (v *Vector2D) Dot(v2 *Vector2D) float64 {
+	return v.X*v2.X + v.Y*v2.Y
 }
 
-func (self *Vector2D) Magnitude() float64 {
-	return math.Sqrt(self.X*self.X + self.Y*self.Y)
+func (v *Vector2D) Magnitude() float64 {
+	return math.Sqrt(v.Dot(v))
 }
 
-func (self *Vector2D) Angle(v *Vector2D) float64 {
-	return math.Acos(self.Dot(v) / (self.Magnitude() * v.Magnitude()))
+func (v *Vector2D) Angle(v2 *Vector2D) float64 {
+	return math.Acos(v.Dot(v2) / (v.Magnitude() * v2.Magnitude()))
 }
