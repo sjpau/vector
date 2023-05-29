@@ -16,5 +16,5 @@ func (self *Vector2D) Magnitude() float64 {
 }
 
 func (self *Vector2D) Angle(v *Vector2D) float64 {
-	return math.Cos(self.Dot(v) / (self.Magnitude() * v.Magnitude()))
+	return math.Acos(self.Dot(v) / (self.Magnitude() * v.Magnitude()))
 }
