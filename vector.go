@@ -24,3 +24,17 @@ func (v *Vector2D) Normalize() {
 	v.X /= length
 	v.Y /= length
 }
+
+func (v *Vector2D) Add(v2 *Vector2D) *Vector2D {
+	return &Vector2D{
+		X: v.X + v2.X,
+		Y: v.Y + v2.Y,
+	}
+}
+
+func (v *Vector2D) Sub(v2 *Vector2D) *Vector2D {
+	return &Vector2D{
+		X: v.X - v2.X,
+		Y: v.Y - v2.Y,
+	}
+}
